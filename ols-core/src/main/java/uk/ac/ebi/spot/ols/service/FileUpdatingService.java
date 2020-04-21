@@ -82,7 +82,16 @@ public class FileUpdatingService {
                 status = fileUpdateService.getFile(config.getNamespace(), config.getFileLocation());
                 document.setLocalPath(status.getFile().getCanonicalPath());
                 String fileHash = document.getFileHash();
-                if (force || fileHash == null || !fileHash.equals(status.getLatestHash()) || wasFailing) {
+                if(force) {
+                    getLog().info(document.getOntologyId() + " forced to load");
+                    document.setStatus(Status.TOLOAD);
+                    document.setMessage("");
+                } else if(fileHash == null) {
+                    getLog().info(document.getOntologyId() + " has no file hash in the database");
+                    document.setStatus(Status.TOLOAD);
+                    document.setMessage("");
+                } else if (!fileHash.equals(status.getLatestHash())) {
+                    getLog().info(document.getOntologyId() + " hash in database " + fileHash + " does not match file hash + " + status.getLatestHash());
                     document.setStatus(Status.TOLOAD);
                     document.setMessage("");
                 }
