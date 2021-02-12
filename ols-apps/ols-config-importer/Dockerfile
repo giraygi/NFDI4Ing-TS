@@ -9,4 +9,4 @@ FROM openjdk:8-jre-alpine
 RUN apk add bash
 COPY --from=build /opt/ols/ols-apps/ols-config-importer/target/ols-config-importer.jar /opt/ols-config-importer.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "/opt/ols-config-importer.jar", "--ols.ontology.config=file:///config/ols-config.yaml","--ols.obofoundry.ontology.config=file:///config/obo-config.yaml"]
+ENTRYPOINT ["java", "-jar", "/opt/ols-config-importer.jar", "--ols.ontology.config=/opt/ols/config/ols-config.yaml","--ols.obofoundry.ontology.config=/opt/ols/config/obo-config.yaml"]
