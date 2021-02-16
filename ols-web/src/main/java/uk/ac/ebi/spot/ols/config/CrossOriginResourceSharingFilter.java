@@ -15,6 +15,9 @@ import java.io.IOException;
  * Samples, Phenotypes and Ontologies Team, EMBL-EBI
  */
 @Component
+
+// kaybolmayan sakiz
+
 public class CrossOriginResourceSharingFilter implements Filter {
     private Logger log = LoggerFactory.getLogger(getClass());
 
