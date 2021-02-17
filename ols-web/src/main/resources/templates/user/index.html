@@ -9,5 +9,97 @@
         <div th:substituteby="index::logout"></div>
         <h1>This is a secured page!</h1>
         <p><a href="/index" th:href="@{/index}">Back to home page</a></p>
+        
+        
+        
+        <th:block th:include="fragments/header :: header"></th:block>
+
+<div id="main-content-area" role="main">
+
+    <!--@thymesVar id="summary" type="uk.ac.ebi.spot.ols.controller.ui.HomeController.SummaryInfo" -->
+    <div class="row">
+        <h3 class="strapline marginTop" th:inline="text">List of all ontologies in [[${shortTitle}]]</h3>
+
+        <!-- Deactivate Ontology search box for now, since the new data tables have a build in search functionality
+        <div class="small-12 columns">
+           <div class="small-8 columns">
+            <form id="filter_form" name="local-search" action="search" method="get">
+                <div id="bloodhound" class="input-group">
+                    <input style="margin-bottom: 0.1em;" class="form-control typeahead" autofocus="autofocus" type="text" name="q" data-olstype="ontology" data-olswidget="select" data-olsontology=""  data-selectpath="" placeholder="Enter an Ontology name" aria-describedby="basic-addon1"/>
+                    <button class="button secondary searchButton glyphicon glyphicon-search" type="submit">Search</button>
+                    <input type="hidden" name="type" value="ontology"/>
+                </div>
+            </form>
+           </div>
+        </div> -->
+
+        <div class="small-12 columns">
+            <div class="dataTables_wrapper dt-foundation no-footer">
+            <table id="ontologiesTable" class="tdisplay dataTable no-footer" role="grid">
+                <thead>
+                <tr>
+                    <th data-width="30%" style="width: 50%;" data-sortable="true">Ontology Name</th>
+                    <th data-sortable="true">Short name</th>
+                    <th data-sortable="true">Description</th>
+                    <th data-sortable="true">Loaded</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="onto : ${all_ontologies}">
+
+                    <td  data-width="30%" style="width: 50%;" >
+
+                        <a th:unless="${{onto.getStatus() == T(uk.ac.ebi.spot.ols.model.Status).NOTLOADED}}" th:href="@{/ontologies/__${onto.getConfig().getNamespace()}__}" th:text="${{onto.getConfig().getTitle()}}">Ontology name</a>
+                        <span th:if="${{onto.getStatus() ==  T(uk.ac.ebi.spot.ols.model.Status).NOTLOADED}}" th:text="${{onto.getConfig().getTitle()}}">Ontology name</span>
+                    </td>
+                    <td><span class="ontology-source" th:text="${{onto.getConfig().getPreferredPrefix()}}"></span></td>
+                    <td th:text="${{onto.getConfig().getDescription()}}">0</td>
+                    <td th:text="${{onto.getLoaded()}}">0</td>
+                    <td>
+                        <a th:unless="${{onto.getStatus() == T(uk.ac.ebi.spot.ols.model.Status).NOTLOADED}}" th:href="'search?ontology=' + ${onto.getConfig().getNamespace()}" href="search">Search</a><br/>
+                        <a th:unless="${{onto.getStatus() == T(uk.ac.ebi.spot.ols.model.Status).NOTLOADED}}" th:href="@{ontologies/__${onto.getConfig().getNamespace()}__/terms}">Terms</a><br/>
+                        <a th:unless="${{onto.getStatus() == T(uk.ac.ebi.spot.ols.model.Status).NOTLOADED}}" th:href="@{ontologies/__${onto.getConfig().getNamespace()}__/properties}">Properties</a><br/>
+                        <a th:unless="${{onto.getStatus() == T(uk.ac.ebi.spot.ols.model.Status).NOTLOADED}}" th:href="@{ontologies/__${onto.getConfig().getNamespace()}__/individuals}">Individuals</a><br/>
+                        <a th:unless="${{onto.getStatus() == T(uk.ac.ebi.spot.ols.model.Status).NOTLOADED || !onto.getConfig().getAllowDownload()}}" th:href="@{ontologies/__${onto.getConfig().getNamespace()}__/download}">Download</a><br/>
+                        <a th:unless="${{onto.getStatus() == T(uk.ac.ebi.spot.ols.model.Status).NOTLOADED}}" th:href="'http://www.visualdataweb.de/webvowl/#iri='+${onto.getConfig().getId()}">Edit</a><br/>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<th:block th:include="fragments/footer :: footer"></th:block>
+
+<!-- <script type="text/javascript" src="/js/oxo.js" th:src="@{/js/oxo.js}"></script> -->
+
+
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/locale/bootstrap-table-en-US.min.js"></script> -->
+
+
+<script type="text/javascript" src="https://cdn.datatables.net/r/zf-5.5.2/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
+
+<script type="text/javascript" src="../static/js/typeahead/typeahead.bundle.js" th:src="@{js/typeahead/typeahead.bundle.js}"></script>
+<script type="text/javascript" src="../static/js/handlebars/4.0.5/handlebars.min.js" th:src="@{js/handlebars/4.0.5/handlebars.min.js}"></script>
+<script type="text/javascript" src="../static/js/ols.js" th:src="@{js/ols.js}"></script>
+<!-- <script type="text/javascript" src="../static/js/ols-termselect2.js" th:src="@{js/ols-termselect2.js}"></script> -->
+
+<!-- All JS that is just used on this page should go here, I suppose-->
+<script>
+    $(document).ready(function() {
+        $('#ontologiesTable').dataTable({
+            "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]]
+        } );
+    });
+</script>
+        
+        
+        
+        
     </body>
 </html>
