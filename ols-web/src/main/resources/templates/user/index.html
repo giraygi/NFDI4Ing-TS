@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
-    <head>
-        <title>Hello Spring Security</title>
-        <meta charset="utf-8" />
-        <link rel="stylesheet" href="/css/main.css" th:href="@{/css/main.css}" />
-    </head>
+
+<html  xmlns:th="https://www.thymeleaf.org" class="no-js" lang="en"> <!--<![endif]-->
+
+
+<head>
+    <div th:replace="fragments/head :: head(olscss=true, datatables_old=true)"></div>
+    <title id="pageTitle" th:inline="text">Home &lt; [[${title}]] &lt; [[${org}]]</title>
+<!--head th:replace="fragments/head :: head(olscss=true, datatables=true)"--
+    <title>Ontology Xref Service   &lt; EMBL-EBI</title>
+    <!- - A few keywords that relate to the content of THIS PAGE (not the whole project)
+    <meta name="keywords" content="biosamples, europe, EBI" />
+    <!- - Describe what this page is about - ->
+    <meta name="description" content="EMBL-EBI" />
+    <meta name="ebi:last-review" content="2016-12-20" />
+    <!- - The last time the content was reviewed - ->
+    <meta name="ebi:expiry" content="2017-12-20" />
+    <!- - When this content is no longer relevant -->
+</head>
+
+<!-- <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"> -->
+<!--     <head> -->
+<!--         <title>Hello Spring Security</title> -->
+<!--         <meta charset="utf-8" /> -->
+<!--         <link rel="stylesheet" href="/css/main.css" th:href="@{/css/main.css}" /> -->
+<!--     </head> -->
     <body>
         <div th:substituteby="index::logout"></div>
         <h1>This is a secured page!</h1>
