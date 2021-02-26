@@ -110,6 +110,11 @@ public class HomeController {
 	public String userIndex() {
 		return "user/index";
 	}
+	
+	@RequestMapping("/user/list")
+	public String userList() {
+		return "user/list";
+	}
 
 	@RequestMapping("/login")
 	public String login() {
@@ -121,6 +126,8 @@ public class HomeController {
 		model.addAttribute("loginError", true);
 		return "login";
 	}
+	
+	
 
     @RequestMapping("/browse.do")
     public ModelAndView redirectOldUrls (

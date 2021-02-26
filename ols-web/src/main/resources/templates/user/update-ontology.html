@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html  xmlns:th="https://www.thymeleaf.org" class="no-js" lang="en"> <!--<![endif]-->
+
+
+<head>
+    <div th:replace="fragments/head :: head(olscss=true, datatables_old=true)"></div>
+    <title id="pageTitle" th:inline="text">Home &lt; [[${title}]] &lt; [[${org}]]</title>
+<!--head th:replace="fragments/head :: head(olscss=true, datatables=true)"--
+    <title>Ontology Xref Service   &lt; EMBL-EBI</title>
+    <!- - A few keywords that relate to the content of THIS PAGE (not the whole project)
+    <meta name="keywords" content="biosamples, europe, EBI" />
+    <!- - Describe what this page is about - ->
+    <meta name="description" content="EMBL-EBI" />
+    <meta name="ebi:last-review" content="2016-12-20" />
+    <!- - The last time the content was reviewed - ->
+    <meta name="ebi:expiry" content="2017-12-20" />
+    <!- - When this content is no longer relevant -->
+</head>
+
+<!-- <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"> -->
+<!--     <head> -->
+<!--         <title>Hello Spring Security</title> -->
+<!--         <meta charset="utf-8" /> -->
+<!--         <link rel="stylesheet" href="/css/main.css" th:href="@{/css/main.css}" /> -->
+<!--     </head> -->
+    <body>
+        <div th:substituteby="index::logout"></div>
+        <h1>This is a secured page!</h1>
+        <p><a href="/index" th:href="@{/index}">Back to home page</a></p>
+        
+        
+        
+        <th:block th:include="fragments/header :: header"></th:block>
+
+        <div class="container my-5">
+            <h2 class="mb-5">New User Ontology</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <form action="#" th:action="@{/user/update/{id}(id=${userontology.id})}" th:object="${userontology}" method="post">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="name" class="col-form-label">Name</label>
+                                <input type="text" th:field="*{name}" class="form-control" id="name" placeholder="Name">
+                                <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="consistency" class="col-form-label">Consistency</label>
+                                <input type="text" th:field="*{consistency}" class="form-control" id="consistency" placeholder="Consistency">
+                                <span th:if="${#fields.hasErrors('consistency')}" th:errors="*{consistency}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="satisfiability" class="col-form-label">Satisfiability</label>
+                                <input type="text" th:field="*{satisfiability}" class="form-control" id="satisfiability" placeholder="Satisfiability">
+                                <span th:if="${#fields.hasErrors('satisfiability')}" th:errors="*{satisfiability}" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mt-5">
+                                <input type="submit" class="btn btn-primary" value="Update User Ontology">
+                            </div>
+                        </div>    
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+<th:block th:include="fragments/footer :: footer"></th:block>
+
+
+        
+        
+        
+        
+    </body>
+</html>
