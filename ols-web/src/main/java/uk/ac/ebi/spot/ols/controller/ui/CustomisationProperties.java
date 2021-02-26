@@ -13,16 +13,16 @@ public class CustomisationProperties {
     @Value("${ols.customisation.debrand:false}")
     private boolean debrand;
     
-    @Value("${ols.customisation.logo:/img/OLS_logo_2017.png}")
+    @Value("${ols.customisation.logo:/img/logonfdi4Ing.png}")
     private String logo;
 
-    @Value("${ols.customisation.title:Ontology Lookup Service}")
+    @Value("${ols.customisation.title: NFDI4Ing Ontology Lookup Service}")
     private String title;
 
-    @Value("${ols.customisation.short-title:OLS}")
+    @Value("${ols.customisation.short-title:NFDI4IngOLS}")
     private String shortTitle;
 
-    @Value("${ols.customisation.org:EMBL-EBI}")
+    @Value("${ols.customisation.org:TIB}")
     private String org;
 
     public void setCustomisationModelAttributes(Model model) {
