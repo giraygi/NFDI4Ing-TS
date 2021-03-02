@@ -16,13 +16,13 @@ public class CustomisationProperties {
     @Value("${ols.customisation.logo:/img/logonfdi4Ing.png}")
     private String logo;
 
-    @Value("${ols.customisation.title: NFDI4Ing Ontology Lookup Service}")
+    @Value("${ols.customisation.title: NFDI4Ing Terminology Service}")
     private String title;
 
-    @Value("${ols.customisation.short-title:NFDI4IngOLS}")
+    @Value("${ols.customisation.short-title: NFDI4IngTS}")
     private String shortTitle;
 
-    @Value("${ols.customisation.org:TIB}")
+    @Value("${ols.customisation.org: TIB}")
     private String org;
 
     public void setCustomisationModelAttributes(Model model) {

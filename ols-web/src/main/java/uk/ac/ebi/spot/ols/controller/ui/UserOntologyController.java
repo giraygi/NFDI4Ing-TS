@@ -18,6 +18,9 @@ import uk.ac.ebi.spot.ols.repositories.UserOntologyRepository;
 public class UserOntologyController {
     
     private final UserOntologyRepository userOntologyRepository;
+    
+    @Autowired
+    private CustomisationProperties customisationProperties;
 
     @Autowired
     public UserOntologyController(UserOntologyRepository userOntologyRepository) {
@@ -26,11 +29,13 @@ public class UserOntologyController {
     @RequestMapping(value="/list", method = RequestMethod.GET)
     public String showUserList(Model model) {
         model.addAttribute("userontologies", userOntologyRepository.findAll());
+        customisationProperties.setCustomisationModelAttributes(model);
         return "user/list";
     }
     @RequestMapping(value="/emptylist", method = RequestMethod.GET)
     public String showEmptyListForm(UserOntology userOntology, Model model) {
     	model.addAttribute("userontology", new UserOntology());
+    	customisationProperties.setCustomisationModelAttributes(model);
         return "user/add-ontology";
     }
     
@@ -38,6 +43,7 @@ public class UserOntologyController {
     @RequestMapping(value="/add-ontology", method = RequestMethod.POST)
     public String addUserOntology(@Valid UserOntology userOntology, BindingResult result, Model model) {
         if (result.hasErrors()) {
+        	customisationProperties.setCustomisationModelAttributes(model);
             return "user/add-ontology";
         }
         
@@ -48,13 +54,14 @@ public class UserOntologyController {
     public String showUpdateForm(@PathVariable("id") long id, Model model) {
         UserOntology userOntology = userOntologyRepository.findOne(id);
         model.addAttribute("userontology", userOntology);
-        
+        customisationProperties.setCustomisationModelAttributes(model);
         return "user/update-ontology";
     }
     @RequestMapping(value="/update/{id}", method = RequestMethod.POST)
     public String updateUser(@PathVariable("id") long id, @Valid UserOntology userOntology, BindingResult result, Model model) {
         if (result.hasErrors()) {
             userOntology.setId(id);
+            customisationProperties.setCustomisationModelAttributes(model);
             return "user/update-ontology";
         }
         

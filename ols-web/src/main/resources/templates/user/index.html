@@ -26,12 +26,8 @@
 <!--     </head> -->
     <body>
         <div th:substituteby="index::logout"></div>
-        <h1>This is a secured page!</h1>
-        <p><a href="/index" th:href="@{/index}">Back to home page</a></p>
-        <p><a href="/user/list" th:href="@{/user/list}">Go to Tools</a></p>
-        
-        
-        
+        <a href="/index" th:href="@{/index}">Back to home page</a>
+        <a href="/user/list" th:href="@{/user/list}">Go to Tools</a>    
         <th:block th:include="fragments/header :: header"></th:block>
 
 <div id="main-content-area" role="main">

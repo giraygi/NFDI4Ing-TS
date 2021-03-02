@@ -107,12 +107,14 @@ public class HomeController {
     }
     
 	@RequestMapping("/user/index")
-	public String userIndex() {
+	public String userIndex(Model model) {	
+		customisationProperties.setCustomisationModelAttributes(model);
 		return "user/index";
 	}
 	
 	@RequestMapping("/user/list")
-	public String userList() {
+	public String userList(Model model) {
+		customisationProperties.setCustomisationModelAttributes(model);
 		return "user/list";
 	}
 
