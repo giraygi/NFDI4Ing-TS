@@ -2,11 +2,14 @@
 <html xmlns:th="https://www.thymeleaf.org" class="no-js" lang="en">
     <head>
     <div th:replace="fragments/head :: head(olscss=true)"></div>
-        <title>Login page</title>
+    <title id="pageTitle" th:inline="text">Home &lt; [[${title}]] &lt; [[${org}]]</title>
+<!--         <title>Login page</title> -->
         <meta charset="utf-8" />
         <link rel="stylesheet" href="/css/main.css" th:href="@{/css/main.css}" />
 	</head>
     <body>
+<!--     The below tag brings Home - Ontologies - Documentation - About tabs!!!!  -->
+    <th:block th:include="fragments/header :: header"></th:block>
         <h1>Login page</h1>
         <p>Example user: user / password</p>
         <p th:if="${loginError}" class="error">Wrong user or password</p>

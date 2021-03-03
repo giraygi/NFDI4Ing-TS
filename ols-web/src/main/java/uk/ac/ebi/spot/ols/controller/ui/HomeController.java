@@ -119,7 +119,8 @@ public class HomeController {
 	}
 
 	@RequestMapping("/login")
-	public String login() {
+	public String login(Model model) {
+		customisationProperties.setCustomisationModelAttributes(model);
 		return "login";
 	}
 
