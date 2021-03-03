@@ -1,0 +1,11 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Mar 01 22:53:47 UTC 2021
+@default-repo.spring.io-http\://repo.spring.io/libs-milestone-local/.lastUpdated=1614639227288
+https\://repo.spring.io/libs-release/.error=Could not transfer artifact org.semanticweb.elk\:elk-proofs\:pom\:0.5.0-20190321.160811-171 from/to spring-releases (https\://repo.spring.io/libs-release)\: Authentication failed for https\://repo.spring.io/libs-release/org/semanticweb/elk/elk-proofs/0.5.0-SNAPSHOT/elk-proofs-0.5.0-20190321.160811-171.pom 401 Unauthorized
+https\://jcenter.bintray.com/.lastUpdated=1614639227717
+https\://oss.sonatype.org/content/repositories/snapshots/.lastUpdated=1614639227965
+@default-spring-releases-https\://repo.spring.io/libs-release/.lastUpdated=1614639227172
+https\://jcenter.bintray.com/.error=
+http\://repo.spring.io/libs-milestone-local/.error=Could not transfer artifact org.semanticweb.elk\:elk-proofs\:pom\:0.5.0-20190321.160811-171 from/to repo.spring.io (http\://repo.spring.io/libs-milestone-local)\: Authorization failed for http\://repo.spring.io/libs-milestone-local/org/semanticweb/elk/elk-proofs/0.5.0-SNAPSHOT/elk-proofs-0.5.0-20190321.160811-171.pom 403 Forbidden
+@default-neo4j-http\://m2.neo4j.org/content/repositories/releases/.lastUpdated=1614639227522
+http\://m2.neo4j.org/content/repositories/releases/.error=Could not transfer artifact org.semanticweb.elk\:elk-proofs\:pom\:0.5.0-20190321.160811-171 from/to neo4j (http\://m2.neo4j.org/content/repositories/releases/)\: Transfer failed for http\://m2.neo4j.org/content/repositories/releases/org/semanticweb/elk/elk-proofs/0.5.0-SNAPSHOT/elk-proofs-0.5.0-20190321.160811-171.pom 502 Bad Gateway

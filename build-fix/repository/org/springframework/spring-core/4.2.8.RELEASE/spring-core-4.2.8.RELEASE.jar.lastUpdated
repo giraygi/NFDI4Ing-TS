@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Mar 01 22:59:24 UTC 2021
+https\://repo.spring.io/libs-release/.lastUpdated=1614639250214
+https\://m2.neo4j.org/content/repositories/releases/.error=Could not transfer artifact org.springframework\:spring-core\:jar\:4.2.8.RELEASE from/to maven-neo4j (https\://m2.neo4j.org/content/repositories/releases/)\: Transfer failed for https\://m2.neo4j.org/content/repositories/releases/org/springframework/spring-core/4.2.8.RELEASE/spring-core-4.2.8.RELEASE.jar 502 Bad Gateway
+https\://repo.maven.apache.org/maven2/.lastUpdated=1614639564403
+@default-maven-neo4j-https\://m2.neo4j.org/content/repositories/releases/.lastUpdated=1614639245358

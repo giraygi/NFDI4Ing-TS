@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>org.semanticweb.elk</groupId>
+  <artifactId>elk-parent</artifactId>
+  <version>0.5.0-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20190321.160925</timestamp>
+      <buildNumber>597</buildNumber>
+    </snapshot>
+    <lastUpdated>20190324214801</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>0.5.0-20190321.160925-597</value>
+        <updated>20190321160925</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

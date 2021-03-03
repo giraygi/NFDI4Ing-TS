@@ -1,0 +1,11 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Mar 01 22:53:58 UTC 2021
+@default-repo.spring.io-http\://repo.spring.io/libs-milestone-local/.lastUpdated=1614639237944
+https\://repo.spring.io/libs-release/.error=Could not transfer artifact org.objenesis\:objenesis-parent\:pom\:2.1 from/to spring-releases (https\://repo.spring.io/libs-release)\: Authentication failed for https\://repo.spring.io/libs-release/org/objenesis/objenesis-parent/2.1/objenesis-parent-2.1.pom 401 Unauthorized
+https\://m2.neo4j.org/content/repositories/releases/.error=Could not transfer artifact org.objenesis\:objenesis-parent\:pom\:2.1 from/to maven-neo4j (https\://m2.neo4j.org/content/repositories/releases/)\: Transfer failed for https\://m2.neo4j.org/content/repositories/releases/org/objenesis/objenesis-parent/2.1/objenesis-parent-2.1.pom 502 Bad Gateway
+https\://jcenter.bintray.com/.lastUpdated=1614639238341
+@default-maven-neo4j-https\://m2.neo4j.org/content/repositories/releases/.lastUpdated=1614639237697
+@default-spring-releases-https\://repo.spring.io/libs-release/.lastUpdated=1614639237834
+http\://repo.spring.io/libs-milestone-local/.error=Could not transfer artifact org.objenesis\:objenesis-parent\:pom\:2.1 from/to repo.spring.io (http\://repo.spring.io/libs-milestone-local)\: Authorization failed for http\://repo.spring.io/libs-milestone-local/org/objenesis/objenesis-parent/2.1/objenesis-parent-2.1.pom 403 Forbidden
+@default-neo4j-http\://m2.neo4j.org/content/repositories/releases/.lastUpdated=1614639238182
+http\://m2.neo4j.org/content/repositories/releases/.error=Could not transfer artifact org.objenesis\:objenesis-parent\:pom\:2.1 from/to neo4j (http\://m2.neo4j.org/content/repositories/releases/)\: Transfer failed for http\://m2.neo4j.org/content/repositories/releases/org/objenesis/objenesis-parent/2.1/objenesis-parent-2.1.pom 502 Bad Gateway

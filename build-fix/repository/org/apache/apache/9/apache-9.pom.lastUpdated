@@ -1,0 +1,11 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Mar 01 22:51:56 UTC 2021
+@default-repo.spring.io-http\://repo.spring.io/libs-milestone-local/.lastUpdated=1614639115768
+https\://repo.spring.io/libs-release/.error=Could not transfer artifact org.apache\:apache\:pom\:9 from/to spring-releases (https\://repo.spring.io/libs-release)\: Authentication failed for https\://repo.spring.io/libs-release/org/apache/apache/9/apache-9.pom 401 Unauthorized
+https\://m2.neo4j.org/content/repositories/releases/.error=Could not transfer artifact org.apache\:apache\:pom\:9 from/to maven-neo4j (https\://m2.neo4j.org/content/repositories/releases/)\: Transfer failed for https\://m2.neo4j.org/content/repositories/releases/org/apache/apache/9/apache-9.pom 502 Bad Gateway
+https\://jcenter.bintray.com/.lastUpdated=1614639116014
+@default-maven-neo4j-https\://m2.neo4j.org/content/repositories/releases/.lastUpdated=1614639115508
+@default-spring-releases-https\://repo.spring.io/libs-release/.lastUpdated=1614639115653
+http\://repo.spring.io/libs-milestone-local/.error=Could not transfer artifact org.apache\:apache\:pom\:9 from/to repo.spring.io (http\://repo.spring.io/libs-milestone-local)\: Authorization failed for http\://repo.spring.io/libs-milestone-local/org/apache/apache/9/apache-9.pom 403 Forbidden
+@default-neo4j-http\://m2.neo4j.org/content/repositories/releases/.lastUpdated=1614639115999
+http\://m2.neo4j.org/content/repositories/releases/.error=Could not transfer artifact org.apache\:apache\:pom\:9 from/to neo4j (http\://m2.neo4j.org/content/repositories/releases/)\: Transfer failed for http\://m2.neo4j.org/content/repositories/releases/org/apache/apache/9/apache-9.pom 502 Bad Gateway

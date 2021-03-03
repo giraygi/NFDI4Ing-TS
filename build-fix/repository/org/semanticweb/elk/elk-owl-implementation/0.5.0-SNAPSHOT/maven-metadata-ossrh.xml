@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>org.semanticweb.elk</groupId>
+  <artifactId>elk-owl-implementation</artifactId>
+  <version>0.5.0-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20190321.160810</timestamp>
+      <buildNumber>586</buildNumber>
+    </snapshot>
+    <lastUpdated>20190321160810</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <classifier>tests</classifier>
+        <extension>jar</extension>
+        <value>0.5.0-20190321.160810-586</value>
+        <updated>20190321160810</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <classifier>sources</classifier>
+        <extension>jar</extension>
+        <value>0.5.0-20190321.153714-585</value>
+        <updated>20190321153714</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>0.5.0-20190321.153714-585</value>
+        <updated>20190321153714</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>0.5.0-20190321.153714-585</value>
+        <updated>20190321153714</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

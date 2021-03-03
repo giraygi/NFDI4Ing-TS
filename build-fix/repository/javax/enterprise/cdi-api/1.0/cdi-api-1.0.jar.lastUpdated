@@ -1,0 +1,12 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Mar 01 22:59:04 UTC 2021
+@default-repo.spring.io-http\://repo.spring.io/libs-milestone-local/.lastUpdated=1614639537824
+https\://repo.spring.io/libs-release/.error=Could not transfer artifact javax.enterprise\:cdi-api\:jar\:1.0 from/to spring-releases (https\://repo.spring.io/libs-release)\: Authentication failed for https\://repo.spring.io/libs-release/javax/enterprise/cdi-api/1.0/cdi-api-1.0.jar 401 Unauthorized
+https\://m2.neo4j.org/content/repositories/releases/.error=Could not transfer artifact javax.enterprise\:cdi-api\:jar\:1.0 from/to maven-neo4j (https\://m2.neo4j.org/content/repositories/releases/)\: Transfer failed for https\://m2.neo4j.org/content/repositories/releases/javax/enterprise/cdi-api/1.0/cdi-api-1.0.jar 502 Bad Gateway
+@default-maven-neo4j-https\://m2.neo4j.org/content/repositories/releases/.lastUpdated=1614639532124
+https\://jcenter.bintray.com/.lastUpdated=1614639543943
+@default-spring-releases-https\://repo.spring.io/libs-release/.lastUpdated=1614639536460
+https\://repo.maven.apache.org/maven2/.lastUpdated=1614639544651
+http\://repo.spring.io/libs-milestone-local/.error=Could not transfer artifact javax.enterprise\:cdi-api\:jar\:1.0 from/to repo.spring.io (http\://repo.spring.io/libs-milestone-local)\: Authorization failed for http\://repo.spring.io/libs-milestone-local/javax/enterprise/cdi-api/1.0/cdi-api-1.0.jar 403 Forbidden
+@default-neo4j-http\://m2.neo4j.org/content/repositories/releases/.lastUpdated=1614639540606
+http\://m2.neo4j.org/content/repositories/releases/.error=Could not transfer artifact javax.enterprise\:cdi-api\:jar\:1.0 from/to neo4j (http\://m2.neo4j.org/content/repositories/releases/)\: Transfer failed for http\://m2.neo4j.org/content/repositories/releases/javax/enterprise/cdi-api/1.0/cdi-api-1.0.jar 502 Bad Gateway

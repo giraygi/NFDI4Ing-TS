@@ -1,0 +1,11 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Mar 01 22:51:26 UTC 2021
+@default-repo.spring.io-http\://repo.spring.io/libs-milestone-local/.lastUpdated=1614639085844
+https\://repo.spring.io/libs-release/.error=Could not transfer artifact org.apache.commons\:commons-parent\:pom\:39 from/to spring-releases (https\://repo.spring.io/libs-release)\: Authentication failed for https\://repo.spring.io/libs-release/org/apache/commons/commons-parent/39/commons-parent-39.pom 401 Unauthorized
+https\://m2.neo4j.org/content/repositories/releases/.error=Could not transfer artifact org.apache.commons\:commons-parent\:pom\:39 from/to maven-neo4j (https\://m2.neo4j.org/content/repositories/releases/)\: Transfer failed for https\://m2.neo4j.org/content/repositories/releases/org/apache/commons/commons-parent/39/commons-parent-39.pom 502 Bad Gateway
+https\://jcenter.bintray.com/.lastUpdated=1614639086244
+@default-maven-neo4j-https\://m2.neo4j.org/content/repositories/releases/.lastUpdated=1614639085567
+@default-spring-releases-https\://repo.spring.io/libs-release/.lastUpdated=1614639085730
+http\://repo.spring.io/libs-milestone-local/.error=Could not transfer artifact org.apache.commons\:commons-parent\:pom\:39 from/to repo.spring.io (http\://repo.spring.io/libs-milestone-local)\: Authorization failed for http\://repo.spring.io/libs-milestone-local/org/apache/commons/commons-parent/39/commons-parent-39.pom 403 Forbidden
+@default-neo4j-http\://m2.neo4j.org/content/repositories/releases/.lastUpdated=1614639086075
+http\://m2.neo4j.org/content/repositories/releases/.error=Could not transfer artifact org.apache.commons\:commons-parent\:pom\:39 from/to neo4j (http\://m2.neo4j.org/content/repositories/releases/)\: Transfer failed for http\://m2.neo4j.org/content/repositories/releases/org/apache/commons/commons-parent/39/commons-parent-39.pom 502 Bad Gateway

@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Mar 01 22:53:53 UTC 2021
+https\://repo.spring.io/libs-release/.lastUpdated=1614639233894
+https\://m2.neo4j.org/content/repositories/releases/.error=Could not transfer artifact org.springframework\:spring-test\:pom\:4.2.8.RELEASE from/to maven-neo4j (https\://m2.neo4j.org/content/repositories/releases/)\: Transfer failed for https\://m2.neo4j.org/content/repositories/releases/org/springframework/spring-test/4.2.8.RELEASE/spring-test-4.2.8.RELEASE.pom 502 Bad Gateway
+@default-maven-neo4j-https\://m2.neo4j.org/content/repositories/releases/.lastUpdated=1614639233542

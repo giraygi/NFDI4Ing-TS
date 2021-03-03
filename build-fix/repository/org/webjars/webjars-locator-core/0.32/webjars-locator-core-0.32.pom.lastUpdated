@@ -1,0 +1,11 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Mar 01 22:58:11 UTC 2021
+@default-repo.spring.io-http\://repo.spring.io/libs-milestone-local/.lastUpdated=1614639491192
+https\://repo.spring.io/libs-release/.error=Could not transfer artifact org.webjars\:webjars-locator-core\:pom\:0.32 from/to spring-releases (https\://repo.spring.io/libs-release)\: Authentication failed for https\://repo.spring.io/libs-release/org/webjars/webjars-locator-core/0.32/webjars-locator-core-0.32.pom 401 Unauthorized
+https\://m2.neo4j.org/content/repositories/releases/.error=Could not transfer artifact org.webjars\:webjars-locator-core\:pom\:0.32 from/to maven-neo4j (https\://m2.neo4j.org/content/repositories/releases/)\: Transfer failed for https\://m2.neo4j.org/content/repositories/releases/org/webjars/webjars-locator-core/0.32/webjars-locator-core-0.32.pom 502 Bad Gateway
+https\://jcenter.bintray.com/.lastUpdated=1614639491871
+@default-maven-neo4j-https\://m2.neo4j.org/content/repositories/releases/.lastUpdated=1614639490823
+@default-spring-releases-https\://repo.spring.io/libs-release/.lastUpdated=1614639491078
+http\://repo.spring.io/libs-milestone-local/.error=Could not transfer artifact org.webjars\:webjars-locator-core\:pom\:0.32 from/to repo.spring.io (http\://repo.spring.io/libs-milestone-local)\: Authorization failed for http\://repo.spring.io/libs-milestone-local/org/webjars/webjars-locator-core/0.32/webjars-locator-core-0.32.pom 403 Forbidden
+@default-neo4j-http\://m2.neo4j.org/content/repositories/releases/.lastUpdated=1614639491434
+http\://m2.neo4j.org/content/repositories/releases/.error=Could not transfer artifact org.webjars\:webjars-locator-core\:pom\:0.32 from/to neo4j (http\://m2.neo4j.org/content/repositories/releases/)\: Transfer failed for http\://m2.neo4j.org/content/repositories/releases/org/webjars/webjars-locator-core/0.32/webjars-locator-core-0.32.pom 502 Bad Gateway

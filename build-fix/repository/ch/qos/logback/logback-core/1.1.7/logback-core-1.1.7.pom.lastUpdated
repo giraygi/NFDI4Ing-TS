@@ -1,0 +1,11 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Mar 01 22:49:59 UTC 2021
+@default-repo.spring.io-http\://repo.spring.io/libs-milestone-local/.lastUpdated=1614638999231
+https\://repo.spring.io/libs-release/.error=Could not transfer artifact ch.qos.logback\:logback-core\:pom\:1.1.7 from/to spring-releases (https\://repo.spring.io/libs-release)\: Authentication failed for https\://repo.spring.io/libs-release/ch/qos/logback/logback-core/1.1.7/logback-core-1.1.7.pom 401 Unauthorized
+https\://m2.neo4j.org/content/repositories/releases/.error=Could not transfer artifact ch.qos.logback\:logback-core\:pom\:1.1.7 from/to maven-neo4j (https\://m2.neo4j.org/content/repositories/releases/)\: Transfer failed for https\://m2.neo4j.org/content/repositories/releases/ch/qos/logback/logback-core/1.1.7/logback-core-1.1.7.pom 502 Bad Gateway
+https\://jcenter.bintray.com/.lastUpdated=1614638999498
+@default-maven-neo4j-https\://m2.neo4j.org/content/repositories/releases/.lastUpdated=1614638998949
+@default-spring-releases-https\://repo.spring.io/libs-release/.lastUpdated=1614638999111
+http\://repo.spring.io/libs-milestone-local/.error=Could not transfer artifact ch.qos.logback\:logback-core\:pom\:1.1.7 from/to repo.spring.io (http\://repo.spring.io/libs-milestone-local)\: Authorization failed for http\://repo.spring.io/libs-milestone-local/ch/qos/logback/logback-core/1.1.7/logback-core-1.1.7.pom 403 Forbidden
+@default-neo4j-http\://m2.neo4j.org/content/repositories/releases/.lastUpdated=1614638999467
+http\://m2.neo4j.org/content/repositories/releases/.error=Could not transfer artifact ch.qos.logback\:logback-core\:pom\:1.1.7 from/to neo4j (http\://m2.neo4j.org/content/repositories/releases/)\: Transfer failed for http\://m2.neo4j.org/content/repositories/releases/ch/qos/logback/logback-core/1.1.7/logback-core-1.1.7.pom 502 Bad Gateway

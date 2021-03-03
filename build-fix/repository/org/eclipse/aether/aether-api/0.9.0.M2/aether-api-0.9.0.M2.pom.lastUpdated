@@ -1,0 +1,11 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Mar 01 22:58:04 UTC 2021
+@default-repo.spring.io-http\://repo.spring.io/libs-milestone-local/.lastUpdated=1614639483892
+https\://repo.spring.io/libs-release/.error=Could not transfer artifact org.eclipse.aether\:aether-api\:pom\:0.9.0.M2 from/to spring-releases (https\://repo.spring.io/libs-release)\: Authentication failed for https\://repo.spring.io/libs-release/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.pom 401 Unauthorized
+https\://m2.neo4j.org/content/repositories/releases/.error=Could not transfer artifact org.eclipse.aether\:aether-api\:pom\:0.9.0.M2 from/to maven-neo4j (https\://m2.neo4j.org/content/repositories/releases/)\: Transfer failed for https\://m2.neo4j.org/content/repositories/releases/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.pom 502 Bad Gateway
+https\://jcenter.bintray.com/.lastUpdated=1614639484433
+@default-maven-neo4j-https\://m2.neo4j.org/content/repositories/releases/.lastUpdated=1614639483642
+@default-spring-releases-https\://repo.spring.io/libs-release/.lastUpdated=1614639483781
+http\://repo.spring.io/libs-milestone-local/.error=Could not transfer artifact org.eclipse.aether\:aether-api\:pom\:0.9.0.M2 from/to repo.spring.io (http\://repo.spring.io/libs-milestone-local)\: Authorization failed for http\://repo.spring.io/libs-milestone-local/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.pom 403 Forbidden
+@default-neo4j-http\://m2.neo4j.org/content/repositories/releases/.lastUpdated=1614639484131
+http\://m2.neo4j.org/content/repositories/releases/.error=Could not transfer artifact org.eclipse.aether\:aether-api\:pom\:0.9.0.M2 from/to neo4j (http\://m2.neo4j.org/content/repositories/releases/)\: Transfer failed for http\://m2.neo4j.org/content/repositories/releases/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.pom 502 Bad Gateway

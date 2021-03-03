@@ -1,0 +1,11 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Mar 01 22:55:31 UTC 2021
+@default-repo.spring.io-http\://repo.spring.io/libs-milestone-local/.lastUpdated=1614639330831
+https\://repo.spring.io/libs-release/.error=Could not transfer artifact org.neo4j\:neo4j-graph-algo\:pom\:2.2.5 from/to spring-releases (https\://repo.spring.io/libs-release)\: Authentication failed for https\://repo.spring.io/libs-release/org/neo4j/neo4j-graph-algo/2.2.5/neo4j-graph-algo-2.2.5.pom 401 Unauthorized
+https\://m2.neo4j.org/content/repositories/releases/.error=Could not transfer artifact org.neo4j\:neo4j-graph-algo\:pom\:2.2.5 from/to maven-neo4j (https\://m2.neo4j.org/content/repositories/releases/)\: Transfer failed for https\://m2.neo4j.org/content/repositories/releases/org/neo4j/neo4j-graph-algo/2.2.5/neo4j-graph-algo-2.2.5.pom 502 Bad Gateway
+https\://jcenter.bintray.com/.lastUpdated=1614639331081
+@default-maven-neo4j-https\://m2.neo4j.org/content/repositories/releases/.lastUpdated=1614639330132
+@default-spring-releases-https\://repo.spring.io/libs-release/.lastUpdated=1614639330708
+http\://repo.spring.io/libs-milestone-local/.error=Could not transfer artifact org.neo4j\:neo4j-graph-algo\:pom\:2.2.5 from/to repo.spring.io (http\://repo.spring.io/libs-milestone-local)\: Authorization failed for http\://repo.spring.io/libs-milestone-local/org/neo4j/neo4j-graph-algo/2.2.5/neo4j-graph-algo-2.2.5.pom 403 Forbidden
+@default-neo4j-http\://m2.neo4j.org/content/repositories/releases/.lastUpdated=1614639331063
+http\://m2.neo4j.org/content/repositories/releases/.error=Could not transfer artifact org.neo4j\:neo4j-graph-algo\:pom\:2.2.5 from/to neo4j (http\://m2.neo4j.org/content/repositories/releases/)\: Transfer failed for http\://m2.neo4j.org/content/repositories/releases/org/neo4j/neo4j-graph-algo/2.2.5/neo4j-graph-algo-2.2.5.pom 502 Bad Gateway
