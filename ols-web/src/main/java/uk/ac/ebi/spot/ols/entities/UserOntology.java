@@ -17,14 +17,14 @@ public class UserOntology {
     private String name;
     
     @NotNull(message = "Consistency is mandatory")
-    private String consistency;
+    private boolean consistency;
     
     @NotNull(message = "Satisfiability is mandatory")
-    private String satisfiability;
+    private boolean satisfiability;
 
     public UserOntology() {}
 
-    public UserOntology(String name, String consistency,String satisfiability) {
+    public UserOntology(String name, boolean consistency,boolean satisfiability) {
         this.name = name;
         this.consistency = consistency;
         this.satisfiability = satisfiability;
@@ -42,11 +42,11 @@ public class UserOntology {
         this.name = name;
     }
     
-    public void setConsistency(String consistency) {
+    public void setConsistency(boolean consistency) {
         this.consistency = consistency;
     }
     
-    public void setSatisfiability(String satisfiability) {
+    public void setSatisfiability(boolean satisfiability) {
         this.satisfiability = satisfiability;
     }
 
@@ -54,11 +54,11 @@ public class UserOntology {
         return name;
     }
 
-    public String getConsistency() {
+    public boolean getConsistency() {
         return consistency;
     }
     
-    public String getSatisfiability() {
+    public boolean getSatisfiability() {
         return satisfiability;
     }
 

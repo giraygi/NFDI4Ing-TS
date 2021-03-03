@@ -40,17 +40,17 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="name" class="col-form-label">Name</label>
-                                <input type="text" th:field="*{name}" class="form-control" id="name" placeholder="Name">
+                                <input type="file" th:field="*{name}" class="form-control" id="name" placeholder="Name" accept=".owl,.rdf,.skos">
                                 <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></span>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="consistency" class="col-form-label">Consistency</label>
-                                <input type="text" th:field="*{consistency}" class="form-control" id="consistency" placeholder="Consistency">
+                                <input type="checkbox" th:field="*{consistency}" class="form-control" id="consistency" placeholder="Consistency" value="consistency">
                                 <span th:if="${#fields.hasErrors('consistency')}" th:errors="*{consistency}" class="text-danger"></span>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="satisfiability" class="col-form-label">Satisfiability</label>
-                                <input type="text" th:field="*{satisfiability}" class="form-control" id="satisfiability" placeholder="Satisfiability">
+                                <input type="checkbox" th:field="*{satisfiability}" class="form-control" id="satisfiability" placeholder="Satisfiability" value="satisfiability">
                                 <span th:if="${#fields.hasErrors('satisfiability')}" th:errors="*{satisfiability}" class="text-danger"></span>
                             </div>
                         </div>
