@@ -13,7 +13,7 @@ public class CustomisationProperties {
     @Value("${ols.customisation.debrand:false}")
     private boolean debrand;
     
-    @Value("${ols.customisation.logo:/img/logonfdi4Ing.png}")
+    @Value("${ols.customisation.logo:/img/20190922_nfdi4ing_avatar_management_cmyk.jpg}")
     private String logo;
 
     @Value("${ols.customisation.title: NFDI4Ing Terminology Service}")
