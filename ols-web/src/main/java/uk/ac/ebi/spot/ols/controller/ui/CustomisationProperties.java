@@ -19,15 +19,12 @@ public class CustomisationProperties {
     @Value("${ols.customisation.logo:/img/TIB_Logo_en.png}")
     private String logo;
 
-    @Value("${ols.customisation.title:Ontology Lookup Service}")
     @Value("${ols.customisation.title:Terminology Service}")
     private String title;
 
-    @Value("${ols.customisation.short-title:OLS}")
     @Value("${ols.customisation.short-title:TS}")
     private String shortTitle;
 
-    @Value("${ols.customisation.org:EMBL-EBI}")
     @Value("${ols.customisation.org:TIB}")
     private String org;
 
