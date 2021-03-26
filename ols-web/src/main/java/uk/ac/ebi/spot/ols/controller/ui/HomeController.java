@@ -257,7 +257,8 @@ public class HomeController {
     }
 
     @RequestMapping({"about"})
-    public String showAbout() {
+    public String showAbout(Model model) {
+    	customisationProperties.setCustomisationModelAttributes(model);
         return "about";
     }
 
