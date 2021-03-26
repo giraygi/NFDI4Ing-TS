@@ -26,40 +26,60 @@
 
 <section id="main-content-area" role="main">
     <div class="row">
-        <h2>HELLO</h2>
+        <h2>Welcome to NFDI4Ing – the National Research Data Infrastructure for Engineering Sciences!</h2>
 
-        <h3>About the Ontology Lookup Service</h3>
+        <h3>NFDI4Ing Terminology Service</h3>
 
                 <p>
-                    The Ontology Lookup Service (OLS) is a repository for biomedical ontologies that aims to provide a single point of access to the latest ontology versions. The user can browse the ontologies through the website as well as programmatically via the OLS API. OLS is developed and maintained by the <a href="http://www.ebi.ac.uk/about/spot-team">Samples, Phenotypes and Ontologies team</a> at EMBL-EBI.
+                    The terminology service (TS) will develop subject-specific terminologies, simultaneously fueling metadata with terms and using the respective application profiles as a basis for refining formal ontologies for the archetypes below. The terminology service will implement technical infrastructure for access, curation, and subscription to terminologies, offering a single-point-of-entry to terminologies in NFDI4Ing.
                 </p>
 
-                <h4>Funding</h4>
+				<img src="img/nfdi_struktur_pfade_Zeichenfläche-1-1-scaled.jpg" alt="archetypes" width="1024" height="822.8">
+
+                <h4>Motivation</h4>
                 <p>
-                    OLS is supported in part by CORBEL funded by the  EU's Horizon 2020 research and innovation programme (2014–2020) under grant agreement number 654248 and by DIACHRON, EU FP7 Capacities Specific Programme,/grant/agreement/number/284209.
+                    The exploitation of data by academia and industry continues to be inefficient. The ambiguity of natural language words and phrases used to annotate data with their meanings is perhaps the primary obstacle. Semantics encoded in such form are inaccessible to machines and often ambiguous even to human experts. The consequent lack of semantic data interoperability and under-performing machine support in tasks ranging from discovering to cleaning and integrating data is the root cause for why data are under-exploited. In response to these concerns, the research community is adopting the FAIR Data Principles. Some of the principles have seen good progress in their implementation. A good example is the resolvable persistent identification of data to ensure their findability and accessibility. The key remaining concern, however, is the practice of using ambiguous words, phrases or even incomprehensible abbreviations to encode data semantics and the elusive principle of data interoperability. As such, the definition of concepts, associated attributes and relations that are readable and understandable, not only to target audiences but also to machines, is key to <a href="https://doi.org/10.3233/ISU-170824">FAIRness</a>. 
                 </p>
 
 
-                <h4>Thanks</h4>
+                <h4>Aim</h4>
 
-                <p>OLS makes use of many public and freely available software resources - we would like to thank them all for their continued support.</p>
+                <p>To address the concerns mentioned above, NFDI4Ing will develop, deploy and sustainably operate a Terminology Service (TS) for the engineering community and associated disciplines and catalyse its integration into operational infrastructures and diverse communities in research and industry. The TS will enable semantic data interoperability, discovery and exploitation across engineering disciplines and thus supports user-centric scientific, industrial and societal applications that maximize the scientific and societal impact of research data. As such, it will include: </p>
                 <ul>
-                    <li><a href="https://spring.io">Spring</a>: application framework</li>
-                    <li><a href="http://owlapi.sourceforge.net">OWL API</a>: Java OWL API</li>
-                    <li><a href="http://www.hermit-reasoner.com">HermiT</a>: OWL reasoner</li>
-                    <li><a href="https://www.cs.ox.ac.uk/isg/tools/ELK/">Elk</a>: OWL reasoner</li>
-                    <li><a href="http://neo4j.com">Neo4j</a>: Graph database</li>
-                    <li><a href="http://lucene.apache.org/solr/">Solr</a>: Search server</li>
-                    <li><a href="https://www.mongodb.org">MongoDB</a>: Document store</li>
-                    <li><a href="http://virtuoso.openlinksw.com">OpenLink Virtuoso</a>: RDF triple store provider for SPARQL endpoint</li>
-                    <li><a href="http://tomcat.apache.org">Apache Tomcat</a>: Web server</li>
-                    <li><a href="https://maven.apache.org">Apache Maven</a>: Software library dependency management</li>
-                    <li><a href="https://github.com">GitHub</a>: - source code hosting</li>
-                    <li><a href="https://www.atlassian.com/software/bamboo/">Bamboo</a>: Continuous integration, continuous deployment and release management.</li>
-                    <li><a href="https://www.atlassian.com/software/fisheye/">Fisheye</a>: Browse, search and track your source code repositories.</li>
-                    <li><a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a> is the full-featured commercial IDE — with a complete set of tools and integrations with the most important modern technologies and frameworks, such as Spring and Hibernate — a must-have for effective Web and Java EE development.</li>
+                    <li>an intuitive interface for look up of uniquely identified vocabulary terms and their data (e.g. synonyms, equivalent terms, definitions and conceptual relations) to support domain experts in semantic data annotation across various NFDI4Ing archetypes,</li>
+                    <li>a machine-readable access point for vocabulary terms and their data intended for use in RDM infrastructure,</li>
+                    <li>the possibility to extend vocabularies by TS users and users of RDM infrastructure who offer data from TS in their services, and</li>
+                    <li>a look up of entities so that ontology knowledge like context relations can be reconstructed.</li>
                 </ul>
+                <p>The TS within NFDI4Ing is instrumental for establishing a comprehensive, integrated Internet of FAIR Data and Services through semantic representation, terminology-based interoperability, and accessibility and interlinking of research data. The TS and its approaches are underpinned by global and open standards, such as languages for knowledge representation recommended by W3C and OGC. The design and implementation of the TS’s functionalities are built upon inclusive stakeholder participation (researchers from different scientific archetypes and engineering disciplines). Stakeholders of the planned NFDI4Ing Terminology Service are data providers especially coming from the NFDI4Ing archetypes, curators, researchers and other consumers. Most of the existing vocabularies that are used in engineering disciplines have a generic origin. Examples for this are descriptions for provenance tracking (e.g., W3C <a href="https://www.w3.org/TR/prov-o/">PROV</a>), units and/or quantities used (e.g., measured quantities such as <a href="https://cdd.iec.ch/">IEC 61630</a>, <a href="http://www.qudt.org/">QUDT</a> and <a href="https://github.com/HajoRijgersberg/OM">OM</a>), devices (e.g. Research Alliance <a href="https://www.rd-alliance.org/groups/persistent-identification-instruments-wg">WG for Persistent Identification of Instruments</a>) and experiments (e.g. the <a href="https://www.allotrope.org/allotrope-framework">Allotrope Data Format (ADF)</a>). Discipline-specific vocabularies mostly focus on engineering-related disciplines, for example chemical (<a href="http://www.chemspider.com/">ChemSpider</a>) and material (<a href="https://www.materialhub.de/">MaterialHub</a>) databases as well as observations (e.g. <a href="https://www.w3.org/TR/vocab-data-cube/">RDF Data Cube Vocabulary</a>, <a href="https://www.w3.org/TR/vocab-ssn/ ">Semantic Sensor Network ontology</a>) and metrology (e.g. <a href="https://www.bipm.org/en/publications/guides/vim.html">VIM3</a>).</p>
 
+
+				<h4>Exemplary Use Case Analysis</h4>
+
+                <p>In the preliminary assessments of the NFDI4Ing archetypes, the following requests concerning the management and provision of terminologies were stated:</p>
+                <ul>
+                    <li>Develop ontologies with semantic structures that are generic enough to be interoperable but specific enough to represent discipline-specific concepts (e.g. model predictions, HPMC data, data quality aspects of 'field data') (e.g. Ellen/Doris/Golo).</li>
+                    <li>Provide (semantic) documentation of all steps of data production & outcome including metadata adjustments, raw data and intermediate data to describe and predict the behaviour of real and virtual experiments. Particularly important is the possibility to include user-defined parameters. For this, a suitable semantic representation to describe the structure of (tabular) datasets and dataset content is needed. To address this issue, the Data Cube Vocabulary (DCV) will be used (e.g. Alex).</li>
+                    <li>Besides research data, ontologies have to include expressions to describe validated, quality-controlled research software. (possible focus: simulation software; e.g. Betty).</li>
+                    <li>Develop suitable vocabularies to describe the operational function of devices used to collect, analyse and visualise data generated and/or processed in industrial production workflows. (refer to 'Internet of Production', e.g. Frank).</li>
+                </ul>
+                
+                <p>In summary, a Terminology Service within NFDI4Ing should address the following points:</p>
+                <ul>
+                    <li>Provide reliable storage for newly created subject-specific vocabularies.</li>
+                    <li>Provide access to (existing and newly created) vocabularies including usage statistics of terms in relevant (meta-)data and a fine-grained classification of vocabularies.</li>
+                    <li>Provide a modus and tools for collaborative creation including a governance structure, a versioning system, a management platform and the possibility to identify missing terms and make term suggestions.</li>
+                    <li>Provide a help-desk to assist the engineering community in the curation of terminologies, thus ensuring a better data quality.</li>
+                </ul>
+                
+                <h4>Description of the planned Terminology Service NFDI4Ing</h4>
+                
+                 <p>The functionality of the TS will include a reliable management system and storage infrastructure for subject-specific vocabularies and ontologies, as well as smart access to (existing and newly created) vocabularies and tools for collaborative creation. The Terminology Service will be characterized by the following key services:</p>
+                <ul>
+                    <li>Access: Well-defined human and machine interfaces to access terminology and single-point-of-entry for terminology in the NFDI4Ing.</li>
+                    <li>Curation: Ticket-based help-desk for handling requests for new terminology or updates to existing terminology by stakeholder communities and quality assurance of terminology in the NFDI4Ing.</li>
+                    <li>Subscription: Subscription-based notification for changes to existing terminology and mechanism to synchronize terminology producers and consumers.</li>
+                </ul>
     </div>
 </section>
 
