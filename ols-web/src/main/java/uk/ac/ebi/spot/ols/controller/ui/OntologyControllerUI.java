@@ -113,7 +113,7 @@ public class OntologyControllerUI {
             response.setHeader( "Content-Disposition", "filename=" + ontologyId + ".owl" );
             return new FileSystemResource(getDownloadFile(ontologyId));
         } catch (FileNotFoundException e) {
-            throw new ResourceNotFoundException("This ontology is not available for download");
+            throw new ResourceNotFoundException("This ontology could not be found in home directory and is not available for download");
         }
     }
 
