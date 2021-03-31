@@ -39,6 +39,12 @@ public class CustomisationProperties {
 
     @Value("${ols.customisation.backgroundColor:0080FF}")
     private String backgroundColor;
+    
+    @Value("${ols.customisation.issuesPage: https://github.com/giraygi/NFDI4Ing-TS/issues}")
+    private String issuesPage;
+
+    @Value("${ols.customisation.supportMail: giray.tuncay@tib.eu}")
+    private String supportMail;
 
     public void setCustomisationModelAttributes(Model model) {
         model.addAttribute("debrand", debrand);
@@ -51,6 +57,8 @@ public class CustomisationProperties {
         model.addAttribute("twitter", twitter);
         model.addAttribute("backgroundImage", backgroundImage);
         model.addAttribute("backgroundColor", backgroundColor);
+        model.addAttribute("issuesPage", issuesPage);
+        model.addAttribute("supportMail", supportMail);
     }
 
     public boolean getDebrand() {
