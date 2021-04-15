@@ -19,15 +19,23 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.List;
+import java.util.ArrayList;
+
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import uk.ac.ebi.spot.ols.ApplicationProperties;
 
 /**
  * @author Simon Jupp
  * @date 15/07/2015
  * Samples, Phenotypes and Ontologies Team, EMBL-EBI
  */
+@EnableConfigurationProperties(value = ApplicationProperties.class)
 @Controller
 @RequestMapping("/ontologies")
 public class OntologyControllerUI {
+	
+	@Autowired
+    private ApplicationProperties applicationProperties;
 
     @Autowired
     private HomeController homeController;
@@ -47,8 +55,15 @@ public class OntologyControllerUI {
 
     @RequestMapping(path = "", method = RequestMethod.GET)
     String getAll(Model model) {
-        List list = repositoryService.getAllDocuments(new Sort(new Sort.Order(Sort.Direction.ASC, "ontologyId")));
-        model.addAttribute("all_ontologies", list);
+        List<OntologyDocument> list = repositoryService.getAllDocuments(new Sort(new Sort.Order(Sort.Direction.ASC, "ontologyId")));
+        List<OntologyDocument> temp = new ArrayList<OntologyDocument>();
+        
+    	for (OntologyDocument ontologyDocument : list) {
+    		if(applicationProperties.getOntologies().contains(ontologyDocument.getConfig().getNamespace()))
+    			temp.add(ontologyDocument);
+		}
+        
+        model.addAttribute("all_ontologies", temp);
         customisationProperties.setCustomisationModelAttributes(model);
         return "browse";
     }
