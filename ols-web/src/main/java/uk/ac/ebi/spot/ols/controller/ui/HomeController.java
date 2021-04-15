@@ -7,6 +7,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -39,9 +40,16 @@ import uk.ac.ebi.spot.ols.model.OntologyDocument;
 import uk.ac.ebi.spot.ols.service.OntologyRepositoryService;
 import uk.ac.ebi.spot.ols.util.OLSEnv;
 
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import uk.ac.ebi.spot.ols.ApplicationProperties;
+
+@EnableConfigurationProperties(value = ApplicationProperties.class)
 @Controller
 @RequestMapping("")
 public class HomeController {
+	
+	@Autowired
+    private ApplicationProperties applicationProperties;
 
     @Autowired
     OntologyRepositoryService repositoryService;
@@ -68,7 +76,14 @@ public class HomeController {
     @ModelAttribute("all_ontologies")
     public List<OntologyDocument> getOntologies() {
         try {
-            return repositoryService.getAllDocuments(new Sort(new Sort.Order(Sort.Direction.ASC, "ontologyId")));
+        	
+            List<OntologyDocument>  temp = new ArrayList<OntologyDocument>();
+        	for (OntologyDocument ontologyDocument : repositoryService.getAllDocuments(new Sort(new Sort.Order(Sort.Direction.ASC, "ontologyId")))) {
+        		if(applicationProperties.getOntologies().contains(ontologyDocument.getConfig().getNamespace()))
+        			temp.add(ontologyDocument);
+    		}
+        	
+            return temp;
         } catch (Exception e) {
             return Collections.emptyList();
         }
@@ -206,6 +221,9 @@ public class HomeController {
 
         if (ontologies != null) {
             searchOptions.setOntologies(ontologies);
+        	for (String string : ontologies) {
+    			System.out.println(string);
+    		}
         }
 
         if (queryFields != null) {
@@ -223,7 +241,6 @@ public class HomeController {
         if (groupField != null) {
             searchOptions.setGroupField(groupField);
         }
-
 
         model.addAttribute("searchOptions", searchOptions);
         customisationProperties.setCustomisationModelAttributes(model);
