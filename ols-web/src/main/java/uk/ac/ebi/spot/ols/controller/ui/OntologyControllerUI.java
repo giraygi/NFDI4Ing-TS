@@ -87,8 +87,12 @@ public class OntologyControllerUI {
             } catch (Exception e) {
               // only thrown if not valid e-mail, so contact must be URL of some sort
             }
+            
+            List<OntologyDocument> temp = new ArrayList<OntologyDocument>();
+            temp.add(document);      
+            
             model.addAttribute("contact", contact);
-
+            model.addAttribute("all_ontologies", document);
             model.addAttribute("ontologyDocument", document);
 
             customisationProperties.setCustomisationModelAttributes(model);

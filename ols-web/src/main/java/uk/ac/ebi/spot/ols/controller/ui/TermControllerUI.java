@@ -83,7 +83,7 @@ public class TermControllerUI {
             }
 
             Page<Term> termsPage = ontologyTermGraphService.findAllByOntology(ontologyId, pageable);
-
+ 
             model.addAttribute("ontologyName", document.getOntologyId());
             model.addAttribute("ontologyTitle", document.getConfig().getTitle());
             model.addAttribute("ontologyPrefix", document.getConfig().getPreferredPrefix());
@@ -157,6 +157,10 @@ public class TermControllerUI {
             }
         }
 
+        List<OntologyDocument> temp = new ArrayList<OntologyDocument>();
+        temp.add(document); 
+        model.addAttribute("all_ontologies", document);
+        
         DisplayUtils.setPreferredRootTermsModelAttributes(ontologyId, document, ontologyTermGraphService, model);
 
         customisationProperties.setCustomisationModelAttributes(model);
