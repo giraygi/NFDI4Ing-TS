@@ -6,6 +6,7 @@ import java.util.Calendar;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -218,12 +219,17 @@ public class HomeController {
                 rows,
                 start
         );
+        
+        Collection<String>  fullOntologySet = new HashSet<String>();
+    	for (OntologyDocument ontologyDocument : repositoryService.getAllDocuments(new Sort(new Sort.Order(Sort.Direction.ASC, "ontologyId")))) {
+    		fullOntologySet.add(ontologyDocument.getConfig().getNamespace());
+		}
+    	
+    	searchOptions.setFullOntologySet(fullOntologySet);        
+        searchOptions.setApplicationProperties(applicationProperties);
 
         if (ontologies != null) {
             searchOptions.setOntologies(ontologies);
-        	for (String string : ontologies) {
-    			System.out.println(string);
-    		}
         }
 
         if (queryFields != null) {

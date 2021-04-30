@@ -5,7 +5,7 @@ $(document).ready(function() {
     var relativePath = $(this).data("selectpath") ? $(this).data("selectpath") : '';
     var ontology = $(this).data("olsontology") ? $(this).data("olsontology") : '';
     var type = $(this).data("olstype") ? $(this).data("olstype") : '';
-
+    
     var source = [{
                 name: 'suggestion',
                 source: getSuggestHound(relativePath),
@@ -17,7 +17,8 @@ $(document).ready(function() {
                 display: 'value',
                 templates: getSuggestTemplate()
               }];
-    createTypeAhead($(this), relativePath, source);
+              
+    createTypeAhead($(this), relativePath, source); //THIS SHOULD BE FILTERED
   });
 
   $( "input[data-olswidget='select']" ).each(function() {
@@ -41,15 +42,35 @@ $(document).ready(function() {
 function createTypeAhead (element, relativePath, source) {
 
   element.bind('typeahead:select', function(ev, suggestion) {
-
         if (suggestion.data != undefined) {
           var type = getUrlType(suggestion.data.type);
           if (type=='ontology') {
-            window.location.href = relativePath + 'ontologies/' + suggestion.data.ontology;
+      if(document.getElementById("ontology-id"))
+		for (var option of document.getElementById("ontology-id").options) {
+      		if (option.value == suggestion.data.ontology){
+      			window.location.href = relativePath + 'ontologies/' + suggestion.data.ontology;
+      			break;
+      		}
+		} 
+	  else
+	    if(document.getElementById("autocompletebehaviour")) 
+	      window.location.href = relativePath + 'ontologies/' + suggestion.data.ontology;            
+            
           }
           else {
+          
             var encoded = encodeURIComponent(suggestion.data.iri);
-            window.location.href = relativePath + 'ontologies/' + suggestion.data.ontology + "/" + type + '?iri=' + encoded;
+      if(document.getElementById("ontology-id"))         
+         for (var option of document.getElementById("ontology-id").options) {
+      		if (option.value == suggestion.data.ontology){
+      			 window.location.href = relativePath + 'ontologies/' + suggestion.data.ontology + "/" + type + '?iri=' + encoded;
+      			break;
+      		}
+		}
+      else
+        if(document.getElementById("autocompletebehaviour"))
+		  window.location.href = relativePath + 'ontologies/' + suggestion.data.ontology + "/" + type + '?iri=' + encoded;          
+           
           }
         }
         else {
@@ -179,12 +200,25 @@ function selectResponse (response) {
     if (shortId == undefined) {
       shortId = dataItem.short_form;
     }
-    return {
-      id: id,
-      value: dataItem.label,
-      data: {ontology: dataItem.ontology_name, prefix: dataItem.ontology_prefix, iri : dataItem.iri, label: label,synonym: synonym, shortForm: shortId, type: dataItem.type},
-      query: query
-    };
+    	if(document.getElementById("ontology-id"))
+    		for (var option of document.getElementById("ontology-id").options) {
+      		if (option.value == dataItem.ontology_name){
+      			    return {
+      						id: id,
+     					    value: dataItem.label,
+     						data: {ontology: dataItem.ontology_name, prefix: dataItem.ontology_prefix, iri : dataItem.iri, label: label,synonym: synonym, shortForm: shortId, type: dataItem.type},
+      						query: query
+    						};
+      		}
+		} 
+		else 
+		  if(document.getElementById("autocompletebehaviour"))
+					return {
+      						id: id,
+     					    value: dataItem.label,
+     						data: {ontology: dataItem.ontology_name, prefix: dataItem.ontology_prefix, iri : dataItem.iri, label: label,synonym: synonym, shortForm: shortId, type: dataItem.type},
+      						query: query
+    						};
   });
 }
 
