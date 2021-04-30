@@ -98,11 +98,11 @@
                         <button class="button secondary searchButton glyphicon glyphicon-search"
                                 type="submit">Search</button>
                     </div>
-                    <input type="hidden" name="ontology" th:value="${ontologyTerm.getOntologyName()}"/>
+                    <input id="autocompletebehaviour" type="hidden" name="ontology" th:value="${ontologyTerm.getOntologyName()}"/>
                 </form>
             </div>
         </div>
-
+        
         <!--div class="grid_24 clearfix">
             <p style="display:inline;"><button id='copyThis'
                                                data-clipboard-action="copy"

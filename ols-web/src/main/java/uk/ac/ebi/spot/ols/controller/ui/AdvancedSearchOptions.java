@@ -3,6 +3,8 @@ package uk.ac.ebi.spot.ols.controller.ui;
 import java.util.Collection;
 import java.util.HashSet;
 
+import uk.ac.ebi.spot.ols.ApplicationProperties;
+
 /**
  * @author Simon Jupp
  * @date 13/07/2015
@@ -10,7 +12,8 @@ import java.util.HashSet;
  */
 public class AdvancedSearchOptions {
 
-
+	private ApplicationProperties applicationProperties;
+    private Collection<String> fullOntologySet= new HashSet<>();
     private String query;
     private Collection<String> queryField = new HashSet<>();
     private Collection<String> ontologies = new HashSet<>();
@@ -50,6 +53,23 @@ public class AdvancedSearchOptions {
     }
 
     public Collection<String> getOntologies() {
+    	if (ontologies.size()==0 || ontologies == null) {
+        	
+        	Collection<String>  temp = new HashSet<>();
+            temp.addAll(ontologies);
+        	
+        	ontologies.addAll(fullOntologySet); 
+        	temp.addAll(fullOntologySet); 
+            
+            for (String string : ontologies) {
+    			if (!applicationProperties.getOntologies().contains(string)) {
+    				temp.remove(string);
+    			}
+    		}
+
+            return temp;
+        }
+        	   
         return ontologies;
     }
 
@@ -124,4 +144,20 @@ public class AdvancedSearchOptions {
     public void setGroupField(String groupField) {
         this.groupField = groupField;
     }
+
+	public ApplicationProperties getApplicationProperties() {
+		return applicationProperties;
+	}
+
+	public void setApplicationProperties(ApplicationProperties applicationProperties) {
+		this.applicationProperties = applicationProperties;
+	}
+
+	public Collection<String> getFullOntologySet() {
+		return fullOntologySet;
+	}
+
+	public void setFullOntologySet(Collection<String> fullOntologySet) {
+		this.fullOntologySet = fullOntologySet;
+	}
 }
