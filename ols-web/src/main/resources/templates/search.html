@@ -59,8 +59,8 @@
                 <div style="visibility:hidden;position:absolute;">
                     <select id="ontology-id" name="ontology" multiple="multiple" >
                         <option
-                                th:value="${ontology}"
-                                th:each="ontology : ${searchOptions.getOntologies()}"
+                                th:value="${ontology.getConfig().getNamespace()}" 
+                                th:each="ontology : ${all_ontologies}"
                                 selected="selected"
                         >
                         </option>

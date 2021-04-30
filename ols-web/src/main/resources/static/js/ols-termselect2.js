@@ -55,6 +55,7 @@ function createTypeAhead (element, relativePath, source) {
 	  else
 	    if(document.getElementById("autocompletebehaviour")) 
 	      window.location.href = relativePath + 'ontologies/' + suggestion.data.ontology;            
+		}              
             
           }
           else {
@@ -70,6 +71,7 @@ function createTypeAhead (element, relativePath, source) {
       else
         if(document.getElementById("autocompletebehaviour"))
 		  window.location.href = relativePath + 'ontologies/' + suggestion.data.ontology + "/" + type + '?iri=' + encoded;          
+		}          
            
           }
         }

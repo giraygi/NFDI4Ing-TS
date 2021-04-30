@@ -53,6 +53,17 @@
                          </span>
                 </form>
             </div>
+            
+            <div style="visibility:hidden;position:absolute;">
+                    <select id="ontology-id" name="ontology" multiple="multiple" >
+                        <option
+                                th:value="${ontology.getConfig().getNamespace()}" 
+                                th:each="ontology : ${all_ontologies}"
+                                selected="selected"
+                        >
+                        </option>
+                    </select>
+            </div>
 
             <div th:if="${debrand} == false">
                 <div class="small-4 columns">
