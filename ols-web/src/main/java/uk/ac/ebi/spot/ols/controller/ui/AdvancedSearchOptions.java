@@ -53,21 +53,14 @@ public class AdvancedSearchOptions {
     }
 
     public Collection<String> getOntologies() {
-    	if (ontologies.size()==0 || ontologies == null) {
-        	
-        	Collection<String>  temp = new HashSet<>();
-            temp.addAll(ontologies);
-        	
-        	ontologies.addAll(fullOntologySet); 
-        	temp.addAll(fullOntologySet); 
-            
-            for (String string : ontologies) {
-    			if (!applicationProperties.getOntologies().contains(string)) {
-    				temp.remove(string);
-    			}
-    		}
-
-            return temp;
+    	if (ontologies == null) {
+        	Collection<String>  ontologies = new HashSet<>();
+        	ontologies.addAll(applicationProperties.getOntologies());
+        	ontologies.retainAll(fullOntologySet);
+        } else 
+        	if (ontologies.isEmpty()) {
+        		ontologies.addAll(applicationProperties.getOntologies());
+        		ontologies.retainAll(fullOntologySet);
         }
         	   
         return ontologies;

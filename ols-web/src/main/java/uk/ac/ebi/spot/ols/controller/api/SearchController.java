@@ -10,6 +10,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.data.rest.webmvc.RepositoryLinksResource;
 import org.springframework.hateoas.mvc.ControllerLinkBuilder;
 import org.springframework.http.MediaType;
@@ -17,6 +18,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import uk.ac.ebi.spot.ols.ApplicationProperties;
 import uk.ac.ebi.spot.ols.config.SearchConfiguration;
 
 import javax.servlet.http.HttpServletResponse;
@@ -36,8 +39,12 @@ import static org.springframework.http.MediaType.*;
  * @date 02/07/2015
  * Samples, Phenotypes and Ontologies Team, EMBL-EBI
  */
+@EnableConfigurationProperties(value = ApplicationProperties.class)
 @Controller
 public class SearchController {
+	
+	@Autowired
+    private ApplicationProperties applicationProperties;
 
     private static String COLON = ":";
     private static String QUOTUE = "\"";
@@ -286,6 +293,8 @@ public class SearchController {
             HttpServletResponse response
     ) throws IOException {
 
+    	ontologies = new HashSet<String>();
+    	ontologies.addAll(applicationProperties.getOntologies());
 
         final SolrQuery solrQuery = new SolrQuery(); // 1
 
@@ -369,7 +378,9 @@ public class SearchController {
             @RequestParam(value = "start", defaultValue = "0") Integer start,
             HttpServletResponse response
     ) throws IOException {
-
+    	
+    	ontologies = new HashSet<String>();
+    	ontologies.addAll(applicationProperties.getOntologies());
 
         final SolrQuery solrQuery = new SolrQuery(); // 1
 
