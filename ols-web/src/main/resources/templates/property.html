@@ -121,6 +121,17 @@
                 </form>
             </div>
         </div>
+        
+        <div style="visibility:hidden;position:absolute;">
+             <select id="ontology-id" name="ontology" multiple="multiple" >
+                <option
+                            th:value="${ontology}" 
+                            th:each="ontology : ${filteredOntologyIDs}"
+                            selected="selected"
+                 >
+                 </option>
+             </select>
+         </div>
 
 	    <div class="small-12 columns">
 	        <hr />

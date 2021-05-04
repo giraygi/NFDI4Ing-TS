@@ -87,6 +87,11 @@ public class OntologyControllerUI {
             } catch (Exception e) {
               // only thrown if not valid e-mail, so contact must be URL of some sort
             }
+            
+            List<String> filteredOntologyIDs = new ArrayList<String>();
+            filteredOntologyIDs.add(ontologyId);
+            model.addAttribute("filteredOntologyIDs", filteredOntologyIDs);
+            
             model.addAttribute("contact", contact);
 
             model.addAttribute("ontologyDocument", document);

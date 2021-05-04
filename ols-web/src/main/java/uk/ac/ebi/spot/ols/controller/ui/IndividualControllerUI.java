@@ -20,7 +20,9 @@ import uk.ac.ebi.spot.ols.neo4j.model.Property;
 import uk.ac.ebi.spot.ols.neo4j.service.OntologyIndividualService;
 import uk.ac.ebi.spot.ols.service.OntologyRepositoryService;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * @author Simon Jupp
@@ -89,7 +91,9 @@ public class IndividualControllerUI {
         if (term == null) {
             throw new ResourceNotFoundException("Can't find any individual with that id");
         }
-
+        List<String> filteredOntologyIDs = new ArrayList<String>();
+        filteredOntologyIDs.add(ontologyId);
+        model.addAttribute("filteredOntologyIDs", filteredOntologyIDs);
         model.addAttribute("ontologyIndividual", term);
         model.addAttribute("indvidualTypes", ontologyIndividualService.getDirectTypes(ontologyId, term.getIri(), new PageRequest(0, 10)));
 

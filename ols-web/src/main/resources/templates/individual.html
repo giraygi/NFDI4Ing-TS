@@ -82,6 +82,17 @@
                 </div><!-- /input-group -->
             </form>
         </div>
+        
+        <div style="visibility:hidden;position:absolute;">
+             <select id="ontology-id" name="ontology" multiple="multiple" >
+                <option
+                            th:value="${ontology}" 
+                            th:each="ontology : ${filteredOntologyIDs}"
+                            selected="selected"
+                 >
+                 </option>
+             </select>
+         </div>
 
         <div id="terms-tab-content" class="small-8 columns">
             <ul class="tabs" data-tabs="true" id="terms_tabs">

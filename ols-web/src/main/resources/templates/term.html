@@ -103,6 +103,17 @@
             </div>
         </div>
         
+        <div style="visibility:hidden;position:absolute;">
+             <select id="ontology-id" name="ontology" multiple="multiple" >
+                <option
+                            th:value="${ontology}" 
+                            th:each="ontology : ${filteredOntologyIDs}"
+                            selected="selected"
+                 >
+                 </option>
+             </select>
+         </div>
+        
         <!--div class="grid_24 clearfix">
             <p style="display:inline;"><button id='copyThis'
                                                data-clipboard-action="copy"

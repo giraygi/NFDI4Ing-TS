@@ -156,6 +156,10 @@ public class TermControllerUI {
                 log.error("Failed to read and parse JSON for definition citations: data may be missing from the view", e);
             }
         }
+        
+        List<String> filteredOntologyIDs = new ArrayList<String>();
+        filteredOntologyIDs.add(ontologyId);
+        model.addAttribute("filteredOntologyIDs", filteredOntologyIDs);
 
         DisplayUtils.setPreferredRootTermsModelAttributes(ontologyId, document, ontologyTermGraphService, model);
 
