@@ -47,7 +47,7 @@ function createTypeAhead (element, relativePath, source) {
           var type = getUrlType(suggestion.data.type);
           if (type=='ontology') {
           
-		for (var option of document.getElementById("ontology-id").options) {
+		for (var option of Array.from(document.getElementById("ontology-id").options)) {
       		if (option.value == suggestion.data.ontology){
       			window.location.href = relativePath + 'ontologies/' + suggestion.data.ontology;
       			break;
@@ -59,7 +59,7 @@ function createTypeAhead (element, relativePath, source) {
           
             var encoded = encodeURIComponent(suggestion.data.iri);
                  
-         for (var option of document.getElementById("ontology-id").options) {
+         for (var option of Array.from(document.getElementById("ontology-id").options)) {
       		if (option.value == suggestion.data.ontology){
       			 window.location.href = relativePath + 'ontologies/' + suggestion.data.ontology + "/" + type + '?iri=' + encoded;
       			break;
@@ -196,7 +196,7 @@ function selectResponse (response) {
       shortId = dataItem.short_form;
     }
     
-    		for (var option of document.getElementById("ontology-id").options) {
+    		for (var option of Array.from(document.getElementById("ontology-id").options)) {
       		if (option.value == dataItem.ontology_name){
       			    return {
       						id: id,

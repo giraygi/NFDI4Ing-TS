@@ -373,9 +373,9 @@ function renderOntologyFacetField (facetArray, searchSummary) {
 
             //always restart start when faceting
             $('#start').val(0);
-            var ont = $(document.activeElement).attr('id');
+            var ont = $(e.target).attr('id');
             var ontl = ont.toLowerCase();
-            for (var option of document.getElementById('ontology-id').options) {    		
+            for (var option of Array.from(document.getElementById('ontology-id').options)) {    		
       		  if (option.value == ontl){
       		    document.getElementById('ontology-id').value=ontl;
     	        //$('#ontology-id').val(ontl);
