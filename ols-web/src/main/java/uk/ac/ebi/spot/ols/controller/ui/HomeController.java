@@ -99,10 +99,21 @@ public class HomeController {
     public String showHome(Model model) {
 
         Date lastUpdated = repositoryService.getLastUpdated();
-        int numberOfOntologies = repositoryService.getNumberOfOntologies();
-        int numberOfTerms = repositoryService.getNumberOfTerms();
-        int numberOfProperties = repositoryService.getNumberOfProperties();
-        int numberOfIndividuals = repositoryService.getNumberOfIndividuals();
+        int numberOfTerms = 0;
+        int numberOfProperties = 0;
+        int numberOfIndividuals = 0;
+                
+        List<OntologyDocument>  temp = new ArrayList<OntologyDocument>();
+    	for (OntologyDocument ontologyDocument : repositoryService.getAllDocuments(new Sort(new Sort.Order(Sort.Direction.ASC, "ontologyId")))) {
+    		if(applicationProperties.getOntologies().contains(ontologyDocument.getConfig().getNamespace())) {
+    			temp.add(ontologyDocument);
+    			numberOfTerms+=ontologyDocument.getNumberOfTerms();
+    			numberOfProperties+=ontologyDocument.getNumberOfProperties();
+    			numberOfIndividuals+=ontologyDocument.getNumberOfIndividuals();
+    		}	
+		}
+        
+        int numberOfOntologies = temp.size();
 
         SummaryInfo summaryInfo = new SummaryInfo(lastUpdated, numberOfOntologies, numberOfTerms, numberOfProperties, numberOfIndividuals, getClass().getPackage().getImplementationVersion());
 
