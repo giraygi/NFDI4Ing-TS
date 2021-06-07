@@ -57,6 +57,7 @@ public class CustomisationProperties {
         model.addAttribute("twitter", twitter);
         model.addAttribute("backgroundImage", backgroundImage);
         model.addAttribute("backgroundColor", backgroundColor);
+        model.addAttribute("style","background-color: #"+backgroundColor.replace("#", "")+";");
         model.addAttribute("issuesPage", issuesPage);
         model.addAttribute("supportMail", supportMail);
     }

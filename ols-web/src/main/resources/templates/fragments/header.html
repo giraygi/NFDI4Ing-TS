@@ -8,6 +8,17 @@
 <!-- Here we could find the bootstrap integration: https://github.com/ebiwd/EBI-Style-lab/blob/master/content/pages/websites/sample-site-v1.3/integrations/bootstrap.html-->
 
 <div th:fragment="header">
+
+    <div th:fragment="logout" class="logout" sec:authorize="isAuthenticated()" th:style="@{${style}}">
+        Logged in user: <a id="username" sec:authentication="name"></a>
+        as: <span sec:authentication="principal.authorities"></span>
+        <div id="logout" style="display:none">
+            <form action="#" th:action="@{/logout}" method="post">
+                <input type="submit" value="Logout" th:style="@{${style}}"/> <a href="/user/index" th:href="@{/user/index}">User Home Page</a> 
+            </form>    
+        </div>
+    </div>
+
     <div id="skip-to">
         <a href="#main-content-area">Skip to main content</a>
     </div>

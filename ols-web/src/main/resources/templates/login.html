@@ -1,25 +1,41 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org" class="no-js" lang="en">
-    <head>
-    <div th:replace="fragments/head :: head(olscss=true)"></div>
+
+<html  xmlns:th="https://www.thymeleaf.org" class="no-js" lang="en"> <!--<![endif]-->
+
+
+<head>
+    <div th:replace="fragments/head :: head(olscss=true, datatables_old=true)"></div>
     <title id="pageTitle" th:inline="text">Home &lt; [[${title}]] &lt; [[${org}]]</title>
-<!--         <title>Login page</title> -->
-        <meta charset="utf-8" />
-        <link rel="stylesheet" href="/css/main.css" th:href="@{/css/main.css}" />
-	</head>
+</head>
     <body>
-<!--     The below tag brings Home - Ontologies - Documentation - About tabs!!!!  -->
-    <th:block th:include="fragments/header :: header"></th:block>
-        <h1>Login page</h1>
-        <p>Example user: user / password</p>
+        <th:block th:include="fragments/header :: header"></th:block>
+
+<div id="main-content-area" role="main">
+<!-- <a href="/user/list" th:href="@{/user/list}">Go to Tools</a>   -->
+    <div class="row">
+        <h3 class="strapline marginTop" th:inline="text">Login for Additional Functions</h3>
+
+        <div class="small-12 columns">
+            <div class="dataTables_wrapper dt-foundation no-footer">
+<!--                     <h1>Login page</h1> -->
+<!--         <p>Example user: user / password</p> -->
         <p th:if="${loginError}" class="error">Wrong user or password</p>
         <form th:action="@{/login}" method="post">
-            <label for="username">Username</label>:
+            <label for="username">Username:</label>
             <input type="text" id="username" name="username" autofocus="autofocus" /> <br />
-            <label for="password">Password</label>:
+            <label for="password">Password:</label>
             <input type="password" id="password" name="password" /> <br />
+          <div style="text-align:center"> 
             <input type="submit" value="Log in" />
+          </div>
         </form>
-        <p><a href="/index" th:href="@{/index}">Back to home page</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<th:block th:include="fragments/footer :: footer"></th:block>
+<script type="text/javascript" src="https://cdn.datatables.net/r/zf-5.5.2/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>      
     </body>
 </html>

@@ -106,20 +106,7 @@
             </div>
         </div>
         
-        <div th:fragment="logout" class="logout" sec:authorize="isAuthenticated()">		
-            Logged in user: <span sec:authentication="name"></span> |					
-            Roles: <span sec:authentication="principal.authorities"></span>				
-            <div>
-                <form action="#" th:action="@{/logout}" method="post">					
-                    <input type="submit" value="Logout" />
-                </form>
-            </div>
-        </div>
-<!--         <h6>Additonal functions for users are:</h6> -->
-<!--         <p>Ontology Manipulation and Visualization </p> -->
-<!--         <ul> -->
-<!--             <li>Go to the <a href="/user/index" th:href="@{/user/index}">Login</a></li> -->
-<!--         </ul> -->
+        <a href="/user/index" th:href="@{/user/index}" style="text-align: center;">Ontology Curation</a>
 
         <div id="dataContentDiv" class="small-3 columns">
             <h4>
@@ -151,7 +138,7 @@
 
 <script type="text/javascript" src="../static/js/ols.js" th:src="@{js/ols.js}"></script>
 <script type="text/javascript" src="../static/js/ols-termselect2.js" th:src="@{js/ols-termselect2.js}"></script>
-
+<script type="text/javascript" src="../static/js/user.js" th:src="@{js/user.js}"></script>
 
 <script type="text/javascript" src="../static/js/jquery.browser.min.js" th:src="@{js/jquery.browser.min.js}"></script>
 <script>

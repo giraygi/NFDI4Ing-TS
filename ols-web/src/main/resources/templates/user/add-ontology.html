@@ -4,7 +4,7 @@
 
 
 <head>
-    <div th:replace="fragments/head :: head(olscss=true, datatables_old=true)"></div>
+    <div th:replace="fragments/head :: head(olscss=true)"></div>
     <title id="pageTitle" th:inline="text">Home &lt; [[${title}]] &lt; [[${org}]]</title>
 <!--head th:replace="fragments/head :: head(olscss=true, datatables=true)"--
     <title>Ontology Xref Service   &lt; EMBL-EBI</title>
@@ -24,17 +24,10 @@
 <!--         <meta charset="utf-8" /> -->
 <!--         <link rel="stylesheet" href="/css/main.css" th:href="@{/css/main.css}" /> -->
 <!--     </head> -->
-    <body>
-        <div th:substituteby="index::logout"></div>
-        <a href="/index" th:href="@{/index}">Back to home page</a>
-        
-        
-        
+    <body>    
         <th:block th:include="fragments/header :: header"></th:block>
-
-        <div class="container my-5">
-            <h2 class="mb-5">New User Ontology</h2>
             <div class="row">
+                <h2>New Ontology Suggestion</h2>
                 <div class="col-md-6">
                     <form action="#" th:action="@{/user/add-ontology}" th:object="${userontology}" method="post">
                         <div class="row">
@@ -62,15 +55,8 @@
                     </form>
                 </div>
             </div>
-        </div>
 
-
-<th:block th:include="fragments/footer :: footer"></th:block>
-
-
-        
-        
-        
-        
+    <th:block th:include="fragments/footer :: footer"></th:block>
+    <script type="text/javascript" src="../../static/js/user.js" th:src="@{../js/user.js}"></script>        
     </body>
 </html>
